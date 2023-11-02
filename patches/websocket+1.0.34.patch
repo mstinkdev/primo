@@ -1,0 +1,20 @@
+diff --git a/node_modules/websocket/lib/browser.js b/node_modules/websocket/lib/browser.js
+index c336fe8..449512d 100644
+--- a/node_modules/websocket/lib/browser.js
++++ b/node_modules/websocket/lib/browser.js
+@@ -21,11 +21,10 @@ var websocket_version = require('./version');
+ function W3CWebSocket(uri, protocols) {
+ 	var native_instance;
+ 
+-	if (protocols) {
+-		native_instance = new NativeWebSocket(uri, protocols);
+-	}
+-	else {
+-		native_instance = new NativeWebSocket(uri);
++	if (protocols && protocols.length > 0) {
++	  native_instance = new NativeWebSocket(uri, protocols);
++	} else {
++	  native_instance = new NativeWebSocket(uri);
+ 	}
+ 
+ 	/**

@@ -2,6 +2,7 @@
   "name": "primo-server",
   "version": "2.0.0--beta.40",
   "scripts": {
+    "postinstall": "patch-package",
     "dev": "vite dev",
     "build": "vite build",
     "preview": "vite preview",
@@ -23,6 +24,7 @@
     "estree-walker": "^3.0.3",
     "lodash-es": "^4.17.21",
     "nanoid": "^3.1.23",
+    "patch-package": "^8.0.0",
     "promise-worker": "^2.0.1",
     "resolve.exports": "^2.0.2",
     "timeago.js": "^4.0.2"
@@ -30,6 +32,7 @@
   "devDependencies": {
     "@playwright/test": "^1.33.0",
     "@sveltejs/adapter-auto": "next",
+    "@sveltejs/adapter-cloudflare": "^2.3.3",
     "@sveltejs/kit": "^1.22.4",
     "@typescript-eslint/eslint-plugin": "^5.45.0",
     "@typescript-eslint/parser": "^5.45.0",
