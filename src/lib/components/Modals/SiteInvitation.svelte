@@ -1,5 +1,5 @@
 <script>
-  import axios from 'axios'
+  import axios from '$lib/axios'
   import * as timeago from 'timeago.js'
   import { page } from '$app/stores'
 

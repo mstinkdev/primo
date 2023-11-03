@@ -2,7 +2,7 @@
   import Icon from '@iconify/svelte'
   import { createEventDispatcher } from 'svelte'
   import _ from 'lodash-es'
-  import axios from 'axios'
+  import axios from '$lib/axios'
   import ThemeThumbnail from '$lib/components/ThemeThumbnail.svelte'
   import { validate_site_structure_v2 } from '@primocms/builder'
 

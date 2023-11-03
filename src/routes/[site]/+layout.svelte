@@ -5,7 +5,7 @@
     storage_subscribe,
     deploy_subscribe,
   } from '@primocms/builder'
-  import axios from 'axios'
+  import axios from '$lib/axios'
 
   export let data
 

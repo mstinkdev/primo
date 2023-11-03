@@ -2,7 +2,7 @@
   import { tick, getContext } from 'svelte'
   import Icon from '@iconify/svelte'
   import { page } from '$app/stores'
-  import axios from 'axios'
+  import axios from '$lib/axios'
   import DashboardToolbar from '$lib/components/DashboardToolbar.svelte'
   import SiteThumbnail from '$lib/components/SiteThumbnail.svelte'
   import { show, hide } from '$lib/components/Modal.svelte'

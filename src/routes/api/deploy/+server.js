@@ -1,6 +1,6 @@
 import { json, error as server_error } from '@sveltejs/kit'
 import supabase_admin from '$lib/supabase/admin'
-import axios from 'axios'
+import axios, { USER_AGENT } from '$lib/axios'
 
 export async function POST({ request, locals }) {
   const session = await locals.getSession()
@@ -72,13 +72,14 @@ async function create_repo({ repo_name, token }) {
       name: repo_sans_user,
       auto_init: true,
     },
-    { headers: { Authorization: `Bearer ${token}` } }
+    { headers: { ...USER_AGENT, Authorization: `Bearer ${token}` } }
   )
   return data
 }
 
 async function push_site_to_github({ files, token, repo_name, message }) {
   const headers = {
+    ...USER_AGENT,
     Authorization: `Bearer ${token}`,
     Accept: 'application/vnd.github.v3+json',
   }

@@ -1,6 +1,6 @@
 import supabase from '$lib/supabase'
 import { getFiles } from '$lib/supabase/storage'
-import axios from 'axios'
+import axios from '$lib/axios'
 import { invalidate } from '$app/navigation'
 
 export const sites = {
@@ -39,7 +39,7 @@ export const sites = {
   },
   delete: async (site, { delete_repo, delete_files }) => {
 
-    const [{data:pages}, {data:sections}, {data:symbols}] = await Promise.all([
+    const [{ data: pages }, { data: sections }, { data: symbols }] = await Promise.all([
       supabase.from('pages').select('id, url, name, code, fields, content, site, parent').filter('site', 'eq', site.id),
       supabase.from('sections').select('id, content, page!inner(id, site), symbol, index').filter('page.site', 'eq', site.id),
       supabase.from('symbols').select('id, name, code, fields, content, site').filter('site', 'eq', site.id),
